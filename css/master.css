@@ -1,0 +1,600 @@
+/* Golopal rules  */
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+:root {
+    --main-color: #f21c4c;
+    --main-transition: 0.3s;
+    --secondary-color: #3332;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #17181d;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small  */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium  */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large  */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Golopal rules  */
+
+/* Start Header  */
+
+.hader .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.hader h1 {
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    border-radius: 50%;
+}
+
+@media (max-width: 767px) {
+    .hader h1 {
+        background: none;
+        border: 2px solid var(--main-color);
+        margin-left: 100px;
+    }
+}
+
+.hader .nav {
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .hader .nav {
+        margin: auto;
+    }
+}
+
+
+.hader .nav>li>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    padding: 0 30px;
+    transition: var(--main-transition);
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .hader .nav>li>a {
+        font-size: 14px;
+        padding: 20px;
+        height: 30px;
+    }
+}
+
+.hader .nav>li>a::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background-color: var(--main-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: var(--main-transition);
+    display: none;
+}
+
+.hader .nav>li>a:hover {
+    color: var(--main-color);
+}
+
+.hader .nav>li>a:hover::before {
+    display: block;
+}
+
+/* End Header  */
+
+/* Start Landing  */
+.landing .container {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+    padding-bottom: 80px;
+}
+
+@media (max-width: 991px) {
+    .landing .container {
+        flex-direction: column;
+    }
+}
+
+.landing .container img {
+    width: 600px;
+    max-width: 100%;
+    position: relative;
+    animation: up-and-down 5s linear infinite;
+}
+
+.landing .container .text {
+    flex: 1;
+}
+
+@media (max-width: 991px) {
+    .landing .container .text {
+        margin: 20px auto;
+        text-align: center;
+    }
+}
+
+.landing .container h2 {
+    letter-spacing: 1.5px;
+    font-size: 40px;
+    position: relative;
+    padding: 10px;
+}
+
+@media (max-width: 991px) {
+    .landing .container h2 {
+        font-size: 25px;
+        letter-spacing: normal;
+    }
+}
+
+.landing .container h2::before {
+    content: "Hi There";
+    position: absolute;
+    font-size: 12px;
+    font-weight: normal;
+    top: -20px;
+    left: 0;
+}
+
+@media (max-width: 991px) {
+    .landing .container h2::before {
+        display: none;
+    }
+}
+
+.landing .container p {
+    line-height: 1.6;
+    padding: 10px;
+    max-width: 500px;
+}
+
+
+.landing .container a {
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    display: flex;
+    width: fit-content;
+    margin-top: 20px;
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+
+@media (max-width: 991px) {
+    .landing .container a {
+        margin: 20px auto;
+    }
+}
+
+.landing .container a::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f007";
+    margin-right: 8px;
+}
+
+.landing a:hover {
+    background-color: #17181d;
+    border: 2px solid var(--main-color);
+}
+
+.landing .go-up {
+    position: fixed;
+    bottom: 30px;
+    color: var(--main-color);
+    right: 50px;
+    transform: translateX(-50%);
+    transition: var(--main-transition);
+    font-size: 30px;
+}
+
+@media (max-width: 991px) {
+    .landing .go-up {
+        font-size: 20px;
+    }
+}
+
+.landing .go-up:hover {
+    border-style: none;
+}
+
+.landing .go-up i {
+    animation: bouncing 1.5s infinite;
+}
+
+
+@keyframes bouncing {
+
+    0%,
+    10%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40%,
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* End Landing  */
+
+/* Start Animation  */
+@keyframes up-and-down {
+
+    0%,
+    100% {
+        top: 0;
+    }
+
+    50% {
+        top: -30px;
+    }
+}
+
+/* End Animation  */
+
+/* Start Sevices  */
+.Sevices .container {
+    padding-bottom: 80px;
+}
+
+.Sevices .container h2 {
+    position: relative;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 991px) {
+    .Sevices .container .text {
+        margin-left: 50px;
+    }
+}
+
+.Sevices .container h2::before {
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 4px;
+    height: 61px;
+    top: 3px;
+    left: -15px;
+}
+
+.Sevices .container .boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.Sevices .container .boxs>div {
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.Sevices .container .boxs>div h4 {
+    padding: 10px;
+    transition: var(--main-transition);
+    position: relative;
+    cursor: pointer;
+}
+
+
+.Sevices .container .boxs>div h4::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background-color: var(--main-color);
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    display: none;
+}
+
+.Sevices .container .boxs>div h4:hover {
+    color: var(--main-color);
+}
+
+.Sevices .container .boxs>div h4:hover::after {
+    display: block;
+}
+
+.Sevices .container .boxs>div p {
+    padding: 10px;
+    max-width: 100%;
+}
+
+/* End Sevices  */
+
+/* Start about  */
+.about .container {
+    padding-bottom: 80px;
+}
+
+
+.about .container h2 {
+    position: relative;
+    letter-spacing: 1.5px;
+}
+
+.about .container .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+    .about .container .about-content {
+        flex-direction: column;
+    }
+}
+
+.about .container img {
+    width: 600px;
+    max-width: 100%;
+}
+
+.about .container .about-content .text {
+    flex: 1;
+}
+
+@media (max-width: 991px) {
+    .about .container .about-content .text {
+        text-align: center;
+    }
+}
+
+.about .container h2 {
+    position: relative;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 991px) {
+
+    .about .container h2,
+    .about .container>p {
+        margin-left: 50px;
+    }
+}
+
+.about .container h2::before {
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 4px;
+    height: 61px;
+    top: 3px;
+    left: -15px;
+}
+
+.about .container .text h4 {
+    letter-spacing: 1.5px;
+}
+
+.about .container .text p {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+@media (max-width: 991px) {
+    .about .container .text p {
+        max-width: 90%;
+        margin: 5px auto;
+    }
+}
+
+
+.about .container .text p:last-of-type {
+    position: relative;
+    margin-top: 50px;
+}
+
+.about .container .text p:last-of-type::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: var(--main-color);
+    top: -25px;
+    left: 0;
+}
+
+/* End about */
+
+/* Start Conatct  */
+.contact {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    margin-bottom: 40px;
+}
+
+.contact .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+    .contact .content {
+        flex-direction: column;
+    }
+}
+
+.contact .container .main-hiding h2 {
+    position: relative;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 991px) {
+
+    .contact .container .main-hiding h2,
+    .contact .container .main-hiding p {
+        margin-left: 50px;
+    }
+}
+
+.contact .container .main-hiding h2::before {
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 4px;
+    height: 61px;
+    top: 3px;
+    left: -15px;
+}
+
+.contact .content form {
+    flex-basis: 70%;
+    background-color: var(--secondary-color);
+}
+
+.contact .content form .main-input {
+    padding: 20px;
+    display: block;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    width: 100%;
+    background: none;
+}
+
+.contact .content form textarea.main-input {
+    height: 200px;
+}
+
+.contact .content form input[type="submit"] {
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    display: flex;
+    margin-left: auto;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.contact .content .info {
+    flex-basis: 25%;
+}
+
+@media (max-width: 991px) {
+    .contact .content .info {
+        order: -1;
+        text-align: center;
+    }
+}
+
+.contact .content .info h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.contact .content .info h4:nth-of-type(2) {
+    margin-top: 100px;
+}
+
+@media (max-width: 991px) {
+    .contact .content .info h4:nth-of-type(2) {
+        margin-top: 50px;
+    }
+}
+
+.contact .content .info address {
+    color: #333;
+    line-height: 1.8;
+}
+
+@media (max-width: 991px) {
+    .contact .content .info address {
+        margin-bottom: 30px;
+    }
+}
+
+/* end Contact */
+
+/* Start Foot  */
+.foot {
+    width: 100%;
+    height: 80px;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.foot .icons i {
+    margin-right: 20px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.foot span {
+    margin-left: 10px;
+}
+
+/* End Foot  */
